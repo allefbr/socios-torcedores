@@ -1,0 +1,47 @@
+.#{$prefix}-slide {
+    width: 100%;
+    height: 100vh;
+    min-height: 560px;
+    overflow: hidden;
+
+    background: cl(main, secondary) url('../img/bg-slide.jpg') no-repeat center;
+    background-size: cover;
+
+    .container {
+        height: 100%;
+    }
+
+    @include e('flex'){
+        @extend .row;
+        @extend .align-items-center;
+        @extend .justify-content-between;
+
+        height: 100%;
+        padding-top: rem(80);
+    }
+
+    @include e('frase'){
+        color: cl(white);
+    }
+
+    @include e('frase-light'){
+        font: 400 rem(45) $font-hsl;
+        text-transform: uppercase;
+        color: cl(white);
+        letter-spacing: rem(2);
+
+        b {
+            font-weight: 800;
+            font-family: $font-secundaria;
+            background-color: cl(main, primary);
+        }
+    }
+
+    @include e('frase-big'){
+        font-size: rem(118);
+        font-family: $font-klb;
+        line-height: 1;
+        display: block;
+        margin-bottom: rem(15);
+    }
+}

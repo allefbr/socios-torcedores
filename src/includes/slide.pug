@@ -1,11 +1,13 @@
-section.slide
+section.ls-slide
       div.container
 
-        div.row.flex
-          div.slide__frase
-            h2 Seja socio
-            strong #joguejunto
+        div.ls-slide__flex
+          div.ls-slide__frase.col-6
+            h2.ls-slide__frase-light Seja socio
+            strong.ls-slide__frase-big #joguejunto
+
+            - var sociosNumber = '<b>19.702</b>';
+            p.ls-slide__frase-light Hoje somos !{ sociosNumber } sócios
           
-          form.slide__form.form
-            strong Faça sua doação aqui
-            input(placeholder="Nome completo")
+          include form-doacao.pug
+

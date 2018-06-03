@@ -1,0 +1,33 @@
+.#{$prefix}-icones {
+    padding: ($sizeDefault * 5)+px 0;
+    background-color: cl(white);
+}
+
+.#{$prefix}-vantagens {
+    @extend .d-flex;
+    @extend .align-items-stretch;
+    
+    text-align: center;
+    
+    img {
+        width: 150px;
+        height: auto;
+    }
+
+    @include e('item'){
+        padding: rem(25);
+    }
+
+    @include e('tit'){
+        font-size: rem(40);
+        font-family: $font-hsb;
+        color: cl(main, secondary);
+        text-transform: uppercase;
+        display: block;
+        margin: rem(20) 0;
+    }
+
+    @include e('desc'){
+        font-size: rem(16);
+    }
+}

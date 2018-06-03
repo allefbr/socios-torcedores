@@ -1,0 +1,82 @@
+.#{$prefix}-form {
+    padding: rem($sizeDefault + 5);
+    background-color: #001c43;
+
+    @include e('tit') {
+        font: rem(18) $font-hsb;
+        color: cl(white);
+        text-transform: uppercase;
+        text-align: center;
+
+        display: block;
+        margin-bottom: rem(20);
+    }
+
+    @include e('control'){
+        width: 100%;
+        position: relative;
+        margin-bottom: rem(20);
+    }
+
+    @include e('label'){
+        position: absolute;
+        top: 5px;
+        left: 15px;
+        z-index: 1;
+        font-size: rem(11);
+        font-family: $font-hsr;
+        letter-spacing: rem(1);
+        transform: translateY(0);
+        color: rgba(cl(white), .5 );
+        transition: all .2s ease-in-out;
+    }
+
+    @include e('input'){
+        width: 100%;
+        display: block;
+        transition: all .2s ease-in-out;
+        position: relative;
+        z-index: 2;
+        font-size: rem(15);
+        font-family: $font-hsl; 
+        line-height: .9;
+        background-color: transparent;
+        border: 1px solid rgba(cl(white), .5 );
+        color: #fff;
+        padding: rem(20) rem(15) rem(10) $i;
+        border-radius: 0 $i;
+
+        &::placeholder {
+            color: transparent;
+        }
+
+        &:placeholder-shown  + label {
+            position: absolute;
+            top: 55%;
+            left: 15px;
+            color: rgba(cl(white), .5);
+            transform: translateY(-50%);
+            font-size: rem(16);
+        }
+
+        &:focus {
+            border-color: #fff;
+        }
+    }
+    
+    @include e('colunas'){
+        @extend .d-flex;
+        @extend .align-items-center;
+        @extend .justify-content-between;
+                
+        .#{$prefix}-form__control:first-child {
+            margin-right: 20px;
+        }
+    }
+
+    @include e('submit'){
+        display: flex;
+        width: 100%;        
+        border: 0;
+    }
+}

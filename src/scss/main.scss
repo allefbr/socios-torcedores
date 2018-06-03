@@ -1,58 +1,11 @@
-$color-orange: #f98a09;
 
-@font-face {
-    font-family: 'maven_proregular';
-    src: url('../fonts/mavenpro-regular-webfont.woff2') format('woff2'),
-         url('../fonts/mavenpro-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
+$prefix: 'ls';
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+//==========================================================================
+// STYLES
+//==========================================================================
 
-
-.container {
-  margin: 0 auto;
-  max-width: 1024px;
-}
-
-.topo {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100%;
-
-  padding: 50px 0;
-}
-
-.logo {
-  width: 238px;
-  height: 80px;
-  background: url('../img/logo-socio.png') no-repeat;
-  background-size: contain;
-
-  text-indent: -9999px;
-  overflow: hidden;
-}
-
-.slide {
-  width: 100%;
-  height: 983px;
-  background: url('../img/bg-slide.jpg') center no-repeat;
-
-  .container {
-    height: 100%;
-  }
-
-  .flex {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;    
-  }
-}
+@import 'vendor/base';
+@import 'global/all';
+@import 'modules/all';
+@import 'partials/base';

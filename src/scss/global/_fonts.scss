@@ -1,0 +1,39 @@
+@font-face {
+    font-family: 'heading_prolight';
+    src: url('../#{$font}/headingpro-light-webfont.woff2') format('woff2'),
+         url('../#{$font}/headingpro-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'heading_proregular';
+    src: url('../#{$font}/headingpro-regular-webfont.woff2') format('woff2'),
+         url('../#{$font}/headingpro-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'heading_smallcase_pro_boldBd';
+    src: url('../#{$font}/headingsmallcasepro-bold-webfont.woff2') format('woff2'),
+         url('../#{$font}/headingsmallcasepro-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kollektifregular';
+    src: url('../#{$font}/kollektif-webfont.woff2') format('woff2'),
+         url('../#{$font}/kollektif-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'kollektifbold';
+    src: url('../#{$font}/kollektif-bold-webfont.woff2') format('woff2'),
+         url('../#{$font}/kollektif-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

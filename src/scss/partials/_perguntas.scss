@@ -1,0 +1,5 @@
+.#{$prefix}-perguntas {
+    @extend %paddingSections;
+    background: cl(main, secondary) url('../img/bg-fac.jpg') no-repeat;
+    background-size: cover;
+}

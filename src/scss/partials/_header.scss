@@ -1,0 +1,44 @@
+$topSize: $sizeDefault ;
+
+.#{$prefix}-top {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: rem( $topSize );
+    padding-bottom: rem( $topSize );
+
+    color: cl(white);
+    z-index: 9999;
+
+    @include e('flex'){
+        @extend .d-flex;
+        @extend .align-items-center;
+        @extend .justify-content-between;        
+    }
+}
+
+.#{$prefix}-phone {
+    @extend %fontDefault;
+    color: cl(white);
+    font-style: normal;
+
+    p {
+        @extend %fontDefault;
+        color: cl(white);
+        font-style: normal;
+    }
+}
+
+.tit-pri {
+    font: rem(46) $font-hsb;
+    text-align: center;
+
+    &--red {
+        color: cl(main, primary);
+    }
+
+    &--white {
+        color: cl(white);
+    }
+}

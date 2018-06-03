@@ -1,8 +1,11 @@
-header.topo
-      div.container
-        h1.logo 
+header.ls-top
+      div.container.ls-top__flex
+        h1.ls-logo
           a(href="#") Sócios Torcedores
         
-        ul.menu
-            li.menu__item
-                a(href="#") home
+        address.ls-phone
+          p (85) 3055 2846
+
+        div.wrap-menu
+          include menu.pug
+          a(href="#").ls-btn Login

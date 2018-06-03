@@ -1,0 +1,11 @@
+.#{$prefix}-logo {
+    @include size(238px, 80px);
+    background: url('../img/logo-socio.png') no-repeat center;
+    background-size: cover;
+    text-indent: -9999px;
+
+    a {
+        @extend .d-flex;
+        @include size(100%);
+    }
+}

@@ -1,0 +1,109 @@
+@mixin loading($size, $color) {
+  @include size($size)
+  border-radius: 50%;
+  border: .25rem solid rgba($color, 0.2);
+  border-top-color: $color;
+  animation: spin 1s infinite linear;
+  border-style: double;
+  border-width: .5rem;
+}
+
+%loader {
+  position: relative;
+  z-index: 99;
+  &:after{
+      content: "";
+      @extend %centerPositionAll;
+      border-width: rem(20) $i;
+      margin-left: rem(-18);
+      margin-top: rem(-20);
+  }
+}
+
+%loadPrimaria {
+  @extend %loader;
+  &:after{
+    @include loading(24px, cl(main, primary));
+  }
+}
+
+%loadWhite {
+  @extend %loader;
+  &:after{
+      @include loading(24px, cl(white));
+  }
+}
+
+%loadBlack {
+  @extend %loader;
+  &:after{
+    @include loading(24px, cl(black));
+  }
+}
+
+%loadReset {
+  &:after {
+    display: none $i;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+%spinner {
+  position: relative;
+  &:before, &:after{
+      @include size(15px);
+      content: "";
+      left: 45%;
+      transform: translate(-50%,-50%);
+      top: 40%;
+      position: absolute;
+  }
+}
+
+%spinerPrimaria {
+  @extend %spinner;
+  &:before, &:after {
+    background-color: cl(main, primary);
+    -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+    animation: sk-cubemove 1.8s infinite ease-in-out;
+  }
+
+  &:after {
+    -webkit-animation-delay: -0.9s;
+    animation-delay: -0.9s;
+  }
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
+  50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
+  75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
+  100% { -webkit-transform: rotate(-360deg) }
+}
+
+@keyframes sk-cubemove {
+  25% {
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  } 50% {
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  } 50.1% {
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  } 75% {
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  } 100% {
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
+}

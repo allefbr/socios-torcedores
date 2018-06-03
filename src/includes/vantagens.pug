@@ -1,0 +1,12 @@
+mixin vantagem(img, title, desc)
+    li.ls-vantagens__item
+        img(src=require("./img/"+img), alt="")
+        strong.ls-vantagens__tit= title
+        p.ls-vantagens__desc= desc
+
+section.ls-icones
+    div.container
+        ul.ls-vantagens
+            +vantagem('ingresso.png', 'Ingresso', 'Ut wisi enim ad minim veniam, quis nostrud exerci...')
+            +vantagem('desconto.png', 'Desconto', 'Ut wisi enim ad minim veniam, quis nostrud exerci...')
+            +vantagem('experiencia.png', 'Experiências', 'Ut wisi enim ad minim veniam, quis nostrud exerci...')

@@ -1,0 +1,28 @@
+//==========================================================================
+// VARIAVEIS
+// Definição das variavéis do Tema
+// Não remover nenhuma das variavéis para evitar crash do SASS
+//==========================================================================
+
+// FONTS
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
+
+
+$font: 'fonts';
+$font-default       : 'Montserrat', Arial, helvetica, sans-serif !default;
+$font-secundaria    : 'Open Sans' !default;
+$font-header        : $font-default;
+
+$font-hsl : 'heading_prolight'; 
+$font-hsr : 'heading_proregular'; 
+$font-hsb : 'heading_smallcase_pro_boldBd'; 
+$font-klb : 'kollektifbold'; 
+
+// DEFAULT RADIUS
+$border-radius: 5px;
+$sizeDefault : 15;
+
+// CSS VARS
+//==========================================================================
+$i : !important;
+$t : transparent;

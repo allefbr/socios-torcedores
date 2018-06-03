@@ -1,0 +1,86 @@
+.#{$prefix}-rodape {
+    padding: rem(120) 0;
+    background-color: #002172;
+
+    @include e('row'){
+        @extend .d-flex;
+        @extend .align-items-stretch;
+        @extend .justify-content-between;
+
+        margin-bottom: rem(80);
+
+        @include m('center'){
+            justify-content: center $i;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.#{$prefix}-end {
+    padding: 0 rem(5);
+    font-style: normal;
+
+    p {
+        font-size: rem(15);
+        font-family: 'Open sans';
+        font-style: normal;
+        color: cl(white);
+    }
+
+    strong {
+        display: block;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: rem(5);
+    }
+}
+   
+
+.#{$prefix}-midia {
+    @extend .d-flex;
+    @extend .align-items-center;
+    
+    @include e('item'){
+        padding: 0 rem(15);
+    }
+
+    @include e('link'){
+        @extend .d-flex;
+        @extend .align-items-center;
+        @include size(26px);
+        background: url('../img/image-social.png') no-repeat;
+
+        text-indent: -9999px;
+
+        @include m('facebook'){
+            background-position: 0 0;
+        }
+
+        @include m('twitter'){
+            background-position: -69px 0;
+        }
+
+        @include m('instagram'){
+            background-position: -139px 0;
+        }
+
+        @include m('youtube'){
+            background-position: -209px 0;
+        }
+    }
+}
+
+.#{$prefix}-link-contato {
+    @extend .d-flex;
+    @extend .align-items-center;
+    padding: rem(10) rem(15);
+    color: cl(white);
+    background-color: cl(main, primary);
+
+    font-size: rem(15);
+    font-weight: 'Open sans';
+
+    img {
+        margin-right: rem(10);
+    }
+}

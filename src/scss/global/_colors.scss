@@ -1,0 +1,94 @@
+// **
+// Color Scheme 0.0.1
+// Scheme from colors for the project
+//
+// From DEV Undergrond
+// Participants: Jonas Sousa, Allef Silva
+//
+// We use two variables:
+// $colors  - Map from colors default from the project.
+// $palette - Tonality from the colors primarys, secondarys, etc.
+// **
+
+// Project colors
+// Map from colors default from the project.
+
+$colors: (
+  black: #000,
+  blue: #003383,
+  blueLigth: #0e6ed6,
+  blueDarken: #001950,
+  gray: #454545,
+  grayDarken: #555555,
+  orange: #f57010,
+  white: #fff,
+	yellow: #ffb700,
+  pink: #ed145b,
+
+  // semantic colors
+  // sucess, error, information
+  btns:(
+    primary:   #f5b038,
+    secondary: silver,
+    gray: #454545,
+    white:  #fff,
+    blue:   #00bba3,
+    green:  #00b45b,
+    orange: #ff6b12,
+    yellow: #f5b038,
+    pink: #ed145b,
+  ),
+
+	// semantic colors
+	// sucess, error, information
+	semantic:(
+		sucess:  #12bc00,
+		info:    #0a84ff,
+		warning: #d76e00,
+		error:   #d70022
+	),
+
+	// default colors
+	// brand color, link, button, etc
+	main:(
+		primary:   #ff090f,
+		secondary: #002172,
+    third:     #332e67,
+		link:      #45a1ff
+	)
+);
+
+// Color = cl
+// Colors function
+@function cl($color-name, $color-variant: null) {
+  // color variant is optional
+  @if ($color-variant != null) {
+    @if map-has-key($colors, $color-name) {
+      @return map-get(map-get($colors, $color-name), $color-variant);
+    }
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+
+  @warn "Unknown `#{$color-name}` in $palettes.";
+  @return null;
+}
+
+// Construction
+// @mixin make-color($name: color){
+//   @each $theme in map-keys($colors) {
+//     @each $length in map-get($colors, $theme) {
+//       @if ( length($length) >= 2 ) {
+//         .#{$name}-#{$theme}-#{ nth($length, 1) },
+//         %#{$name}-#{$theme}-#{ nth($length, 1) }{
+//           color: nth($length, 2);
+//         }
+//       } @else {
+//         .#{$name}-#{$theme}
+//         %#{$name}-#{$theme}{
+//           color: #{ nth($length, 1) };
+//         }
+//       }
+//     }
+//   }
+// }

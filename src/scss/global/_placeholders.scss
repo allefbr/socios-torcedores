@@ -1,0 +1,64 @@
+// GLOBAL PLACEHOLDERS
+
+// AnimaBG
+%animabg  { @include transition(.28s); }
+
+//No padding
+%nopd {
+    padding: 0;
+}
+
+// Center Block
+%centerBlock{
+    display: block;
+    margin: {
+        right: auto;
+        left: auto;
+    }
+}
+
+//Float Left
+%floatLeft{
+    float: left;
+}
+
+//Box Full
+%boxFull {
+    @extend %floatLeft;
+    width: 100%;
+}
+
+// img prop
+%imgProp {
+	@include size(100%, auto);
+}
+
+// Transition
+%transitionAll {
+    transition: all .2s ease-in-out;
+}
+
+%transition {
+    transition: all 500ms ease;
+}
+
+// Transition
+%centerPositionAll{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// fonts 
+%fontDefault {
+    font-size: rem(18);
+    font-family: $font-hsb;
+    text-transform: uppercase;    
+    letter-spacing: rem(1);
+}
+
+%paddingSections {
+    padding-top: rem(80);
+    padding-bottom: rem(80);
+}

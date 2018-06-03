@@ -1,0 +1,22 @@
+.wrap-menu {
+    @extend .d-flex;
+    @extend .align-items-center;
+}
+
+.#{$prefix}-menu {
+    @extend .d-flex;
+    @extend .align-items-center;
+
+    @include e('item'){
+        margin: 0 rem( $sizeDefault );
+    }
+
+    @include e('link'){
+        @extend %fontDefault;
+        color: cl(white);
+
+        &:hover, &:focus {
+            color: cl(main, primary);
+        }
+    }
+}

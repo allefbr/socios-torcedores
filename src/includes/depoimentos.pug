@@ -1,0 +1,35 @@
+mixin depoimentos(img, title, desc)
+    div.ls-depoimento
+        figure.ls-depoimento__figure
+            img(src=require(`./img/depoimento/${img}`), alt="")
+        
+        div.ls-depoimento__infos
+            strong.ls-depoimento__tit= title
+            div.ls-depoimento__desc= desc
+        
+        img(src=require('./img/aspas.png')).ls-depoimento__aspas
+
+- 
+    var depoimentos = [
+        {
+            img: 'thumb1.jpg',
+            title: 'Maria Silva',
+            desc: 'Nulla facilisi. Vestibulum, dui eu aliquam faucibus, est dui hendreit nulla, mouris eget tellus. Nulla accumson rutrum nibh, sed eleifend felis blandit'
+        },
+        {
+            img: 'thumb1.jpg',
+            title: 'Maria Silva',
+            desc: 'Nulla facilisi. Vestibulum, dui eu aliquam faucibus, est dui hendreit nulla, mouris eget tellus. Nulla accumson rutrum nibh, sed eleifend felis blandit'
+        },
+    ];
+
+section#depoimentos.ls-depoimentos
+    div.container
+        h2.tit-pri.tit-pri--red Depoimentos
+
+        div.slick-depoimentos
+            each dep in depoimentos
+                +depoimentos( dep.img, dep.title, dep.desc)
+
+
+

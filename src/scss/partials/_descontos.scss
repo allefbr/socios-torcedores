@@ -2,3 +2,47 @@
     @extend %paddingSections;
     background-color: cl(white);
 }
+
+
+.slick-descontos {
+    margin-top: rem(40);
+
+    .slick-slide {
+        padding: rem(10);
+    }
+
+    .slick-arrow {
+        @include size(20px);
+
+        &:before {
+            height: 20px;
+        }
+    }
+}
+
+.#{$prefix}-desconto {
+    @extend .d-flex;
+    @extend .flex-column;
+
+    width: 100%;
+    max-width: 320px;
+
+    @include e('img'){
+        width: 100%;
+        height: auto;
+        border: 1px solid #002172;
+        margin-bottom: rem(10);
+    }
+
+    @include e('tit'){
+        display: block;
+        font: 600 rem(22) $font-secundaria;
+        color: cl(main, primary);
+    }
+
+    @include e('obs'){
+        font: rem(18) $font-hsr;
+        color: #787878;
+        margin-top: rem(3);
+    }
+}

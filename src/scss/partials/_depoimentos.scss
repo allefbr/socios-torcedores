@@ -1,0 +1,62 @@
+.#{$prefix}-depoimentos {
+    padding: ($sizeDefault * 5)+px 0;
+    background-color: cl(white);
+}
+
+.slick-depoimentos {
+    margin-top: 40px;
+
+    .slick-slide {
+        padding-left: rem(100);
+        padding-right: rem(20);
+    }
+
+    .slick-arrow {
+        @include size(20px);
+
+        &:before {
+            height: 20px;
+        }
+    }
+}
+
+.#{$prefix}-depoimento {
+    @extend .d-flex;
+    @extend .align-items-center;
+    background: cl(main, secondary);
+
+    padding: rem(8) rem(15);
+
+    @include e('figure'){
+        @include size(180px);
+        border-radius: 50%;
+        overflow: hidden;
+        margin-left: -110px;
+        flex: none;
+        margin-right: rem(30);
+
+        img {
+            @include size(100%, auto);
+        }
+    }
+
+    @include e('tit'){
+        display: block;
+        font: 700 rem(20) $font-secundaria;
+        color: cl(white);
+        margin-bottom: rem(15);
+        text-transform: uppercase;
+    }
+
+    @include e('desc'){
+        font: rem(16) $font-secundaria;
+        color: cl(white);
+        padding-right: rem(30);
+        font-style: italic;
+    }
+
+    @include e('aspas'){
+        width: 80px;
+        margin-top: 60px;
+    }
+}

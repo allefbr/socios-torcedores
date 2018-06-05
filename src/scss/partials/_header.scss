@@ -1,6 +1,7 @@
 $topSize: $sizeDefault ;
 
 .#{$prefix}-top {
+    @extend %transitionAll;
     width: 100%;
     position: fixed;
     top: 0;
@@ -15,6 +16,15 @@ $topSize: $sizeDefault ;
         @extend .d-flex;
         @extend .align-items-center;
         @extend .justify-content-between;        
+    }
+
+    &.fixed {
+        background: #002172;
+        box-shadow: 0px -11px 13px 11px #002172;
+
+        .#{ls}-logo {
+            @include size(185px, 60px);
+        }
     }
 }
 

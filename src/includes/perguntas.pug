@@ -1,0 +1,37 @@
+mixin perguntas(tit, desc, active)    
+    strong.accordion__tit.box-perguntas__tit
+        a(href="#")= tit        
+    div(class=(active < '1' ? 'accordion__desc box-perguntas__desc': 'accordion__desc box-perguntas__desc') )= desc
+
+- 
+    var perguntas = [
+        {
+            title: 'Como usufruir dos meus descontos?',
+            desc: 'Os benefícios ao sócio-torcedor do FortalezaEC vão além dos acessos aos jogos. Os sócios Leões do Pici têm descontos em vários estabelecimentos de Fortaleza, além de uma rede de produtos, marcas e serviços do Movimento Por Um Futebol Melhor. Para usufruir desses benefícios, basta apresentar seu cartão de sócio e/ou CPF no estabelecimento e se cadastrar no site do movimento.'
+        },
+        {
+            title: 'Quais são as modalidades de pagamento disponíveis para o pagamento do valor do plano ?',
+            desc: 'Os benefícios ao sócio-torcedor do FortalezaEC vão além dos acessos aos jogos. Os sócios Leões do Pici têm descontos em vários estabelecimentos de Fortaleza, além de uma rede de produtos, marcas e serviços do Movimento Por Um Futebol Melhor. Para usufruir desses benefícios, basta apresentar seu cartão de sócio e/ou CPF no estabelecimento e se cadastrar no site do movimento.'
+        },
+        {
+            title: 'Quando taxa de adesão é obrigatória?',
+            desc: 'Os benefícios ao sócio-torcedor do FortalezaEC vão além dos acessos aos jogos. Os sócios Leões do Pici têm descontos em vários estabelecimentos de Fortaleza, além de uma rede de produtos, marcas e serviços do Movimento Por Um Futebol Melhor. Para usufruir desses benefícios, basta apresentar seu cartão de sócio e/ou CPF no estabelecimento e se cadastrar no site do movimento.'
+        },
+        {
+            title: 'Quem pode ser meu dependente?',
+            desc: 'Os benefícios ao sócio-torcedor do FortalezaEC vão além dos acessos aos jogos. Os sócios Leões do Pici têm descontos em vários estabelecimentos de Fortaleza, além de uma rede de produtos, marcas e serviços do Movimento Por Um Futebol Melhor. Para usufruir desses benefícios, basta apresentar seu cartão de sócio e/ou CPF no estabelecimento e se cadastrar no site do movimento.'
+        },
+        {
+            title: 'Como eu posso pagar meu sócio?',
+            desc: 'Os benefícios ao sócio-torcedor do FortalezaEC vão além dos acessos aos jogos. Os sócios Leões do Pici têm descontos em vários estabelecimentos de Fortaleza, além de uma rede de produtos, marcas e serviços do Movimento Por Um Futebol Melhor. Para usufruir desses benefícios, basta apresentar seu cartão de sócio e/ou CPF no estabelecimento e se cadastrar no site do movimento.'
+        }
+    ]
+
+// make perguntas
+section#duvidas.ls-perguntas
+    div.container
+        h2.tit-pri.tit-pri--white Perguntas e respostas
+
+        div.container-small.accordion.box-perguntas
+            each pergunta, index in perguntas
+                +perguntas( pergunta.title, pergunta.desc, index )

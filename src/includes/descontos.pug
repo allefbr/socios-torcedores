@@ -1,0 +1,43 @@
+mixin desconto(img, tit, obs)
+    div.ls-desconto        
+        img(src=require('./img/logos/'+ img), alt=`Logo ${tit}` width="320" height="170").ls-desconto__img
+        strong.ls-desconto__tit= tit
+        span.ls-desconto__obs= obs
+
+- 
+    var descontos = [
+        {
+            img: '01-ateneu.jpg',
+            title: 'Faculdade Ateneu',
+            obs: '10% de desconto'
+        },
+        {
+            img: '02-flf.jpg',
+            title: 'Faculdade Lourenço Filho',
+            obs: '35% de desconto'
+        },
+        {
+            img: '03-estacio.jpg',
+            title: 'Estácio FIC',
+            obs: '40% de desconto'
+        },
+        {
+            img: '04-tiradentes.jpg',
+            title: 'Concursos Tiradentes',
+            obs: '20% de desconto'
+        },
+        {
+            img: '05-colegio.jpg',
+            title: 'Colégio Tiradentes',
+            obs: '10% de desconto'
+        },
+    ]
+
+// make descontos
+section#beneficios.ls-descontos
+    div.container
+        h2.tit-pri.tit-pri--red Descontos exclusivos
+
+        div.slick-descontos
+            each desconto in descontos
+                +desconto(desconto.img, desconto.title, desconto.obs)

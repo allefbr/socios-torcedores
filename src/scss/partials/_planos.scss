@@ -2,3 +2,176 @@
     @extend %paddingSections;
     background-color: #eee;
 }
+
+.#{$prefix}-plano {
+    $self: &;
+    max-width: 370px;
+
+    @include e('content'){
+        @extend .d-flex;
+        @extend .align-items-center;
+        @extend .flex-column;
+        padding: rem(60) rem(40);
+        background-color: cl(main, secondary);
+    }
+
+    @include e('fig'){}
+    @include e('img'){
+        transform: rotate(-10deg);
+    }
+
+    @include e('tit'){
+        font-size: rem(40);
+        font-family: $font-hsb;
+        color: cl(white);
+        text-transform: uppercase;
+
+        margin: rem(30) 0;
+    }
+
+    @include e('price'){
+        padding: rem(15) 0;
+
+        .#{$prefix}-btn {
+            width: 100%;
+        }
+    }
+    
+    // modificadores
+    @include m('red'){
+        @include e('content', $self){
+            background-color: cl(main, primary);
+        }
+
+        .#{$prefix}-btn {
+            background-color: cl(main, secondary);
+        }
+
+         .#{$prefix}-list__item {
+            font-size: rem(18);
+
+            &:before {
+                background-image: url('../img/start-blue.png');
+            }
+         }
+    }
+}
+
+.#{$prefix}-list {
+    display: block;
+    width: 100%;
+    font: rem(14) $font-secundaria;
+    color: cl(white);
+
+    @include e('item'){
+        @extend .d-flex;
+        @extend .align-items-start;
+        margin-bottom: rem(10);
+
+        &:before {
+            content: '';
+            @include size(18px);
+            flex: none ;
+            background: url('../img/start-red.png');
+            background-size: cover;
+            margin-right: rem(15);            
+        }
+    }
+}
+
+// preco 
+.#{$prefix}-price {
+    @extend .d-flex;
+    @extend .align-items-end;
+
+    font-family: $font-secundaria;
+    font-weight: 600;
+
+    color: cl(main, secondary);
+
+    @include e('cifra') {
+        font-size: rem(19);
+        margin-right: rem(5);
+        text-transform: uppercase;
+    }
+
+    @include e('decimal') {
+        font-size: rem(37);
+        line-height: 1;
+    }
+
+    @include e('cents') {
+        font-size: rem(18);
+        align-self: flex-start;
+    }
+
+    @include e('mouth') {
+        font-size: rem(19);
+        font-weight: 400;
+        text-transform: uppercase;
+        margin-left: rem(5);
+    }
+}
+
+.slick-planos {
+    margin-top: rem(30);
+
+    .slick-track {
+        display: flex;
+        align-items: center;
+    }
+
+    .slick-slide {
+        padding: 20px;
+    }
+}
+
+
+.slick-arrow {
+    @include size(30px);
+    position: relative;
+    border: 0;    
+    text-indent: -99999px;
+    cursor: pointer;
+    background-color: transparent;
+
+
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+
+    &:before {
+        @include size(100%, 30px);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-left: 3px solid #7b7b7b;
+        border-bottom: 3px solid #7b7b7b;
+
+        flex: none;        
+    }
+}
+
+.slick-prev {
+    left: -30px;
+
+    &:before {
+        transform: rotate(45deg);
+        margin-left: 40%;
+    }
+}
+
+.slick-next {
+   right: -30px;
+
+    &:before {
+        transform: rotate(-135deg) translate(8px, -8px);        
+    }
+}
+
+.slick-disabled {
+    opacity: .7;
+    cursor: default;
+}

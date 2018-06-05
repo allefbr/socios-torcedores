@@ -1,0 +1,71 @@
+mixin marcas(img, link)
+    div.ls-marca
+        a(href=`${link}`) 
+            img(src=require(`./img/marcas/${img}`) alt="")
+        
+- 
+    var marcas = [
+        {
+            img: '22-socio-01-original.png',
+            link: '#'
+        },
+        {
+            img: '27-socio-07-original.png',
+            link: '#'
+        },
+        {
+            img: '19-socio-02-original.png',
+            link: '#'
+        },
+        {
+            img: '23-socio-03-original.png',
+            link: '#'
+        },
+        {
+            img: '4-apodi-original.png',
+            link: '#'
+        },
+        {
+            img: '9-governo-original.png',
+            link: '#'
+        },
+        {
+            img: '24-socio-06-original.png',
+            link: '#'
+        },
+        {
+            img: '22-socio-01-original.png',
+            link: '#'
+        },
+        {
+            img: '27-socio-07-original.png',
+            link: '#'
+        },
+        {
+            img: '19-socio-02-original.png',
+            link: '#'
+        },
+        {
+            img: '23-socio-03-original.png',
+            link: '#'
+        },
+        {
+            img: '4-apodi-original.png',
+            link: '#'
+        },
+        {
+            img: '9-governo-original.png',
+            link: '#'
+        },
+        {
+            img: '24-socio-06-original.png',
+            link: '#'
+        }
+    ];
+
+// make marcas
+section#marcas.ls-marcas 
+    div.container-full
+        div.slick-marcas
+            each marca in marcas
+                +marcas(marca.img, marca.link)     

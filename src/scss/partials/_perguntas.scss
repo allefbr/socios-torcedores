@@ -1,5 +1,44 @@
 .#{$prefix}-perguntas {
     @extend %paddingSections;
     background: cl(main, secondary) url('../img/bg-fac.jpg') no-repeat;
-    background-size: cover;
+    background-size: 1947px 100%;
+}
+
+.box-perguntas {
+    @extend .d-flex;
+    @extend .flex-column;
+
+    color: cl(white);
+    margin-top: rem(60);
+
+    @include e('tit'){
+        @extend .d-flex;
+        @extend .flex-column;
+        margin: rem(30) 0;
+
+        &:before {
+            content: '';
+            @include size(26px);
+            background: url('../img/start-red.png');
+            background-size: cover;
+            flex: none;
+        }
+
+        a {
+            @extend %transitionAll;
+            font: 700 rem(22) $font-secundaria;
+            color: cl(white);
+            padding: 10;
+            letter-spacing: 1px;
+
+            &:hover {
+                color: rgba( cl(white), .8);
+            }
+        }
+    }
+
+    @include e('desc'){
+        font: 400 rem(16) $font-secundaria;
+        line-height: 1.4;
+    }
 }

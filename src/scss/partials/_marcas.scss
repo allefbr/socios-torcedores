@@ -1,0 +1,18 @@
+.#{$prefix}-marcas {
+    padding: rem(30);
+    background-color: cl(main, primary);
+}
+
+.slick-marcas {
+
+    .slick-slide {
+        padding: rem(15);
+    }
+}
+
+.#{$prefix}-marca {
+    img {
+        width: 100%;
+        height: auto;
+    }
+}

@@ -7,16 +7,16 @@
 // FONTS
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800');
 
-
-$font: 'fonts';
-$font-default       : 'Montserrat', Arial, helvetica, sans-serif !default;
-$font-secundaria    : 'Open Sans' !default;
-$font-header        : $font-default;
-
 $font-hsl : 'heading_prolight'; 
 $font-hsr : 'heading_proregular'; 
 $font-hsb : 'heading_smallcase_pro_boldBd'; 
-$font-klb : 'kollektifbold'; 
+$font-klb : 'kollektifbold';
+
+$font: 'fonts';
+$font-default       : $font-hsr, Arial, helvetica, sans-serif !default;
+$font-secundaria    : 'Open Sans' !default;
+$font-header        : $font-default;
+
 
 // DEFAULT RADIUS
 $border-radius: 5px;

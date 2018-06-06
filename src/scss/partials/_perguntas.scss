@@ -7,14 +7,20 @@
 .box-perguntas {
     @extend .d-flex;
     @extend .flex-column;
-
     color: cl(white);
-    margin-top: rem(60);
+
+    @include respond-to('sm'){
+        margin-top: rem(60);
+    }
 
     @include e('tit'){
         @extend .d-flex;
         @extend .flex-column;
-        margin: rem(30) 0;
+        margin: rem(15) 0;
+
+        @include respond-to('sm'){
+            margin: rem(30) 0;
+        }
 
         &:before {
             content: '';
@@ -26,10 +32,13 @@
 
         a {
             @extend %transitionAll;
-            font: 700 rem(22) $font-secundaria;
-            color: cl(white);
-            padding: 10;
+            font: 700 rem(18) $font-secundaria;
+            color: cl(white);            
             letter-spacing: 1px;
+
+            @include respond-to('sm'){
+                font-size: rem(22);
+            }
 
             &:hover {
                 color: rgba( cl(white), .8);

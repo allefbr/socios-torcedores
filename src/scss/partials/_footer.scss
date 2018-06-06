@@ -1,13 +1,27 @@
 .#{$prefix}-rodape {
-    padding: rem(120) 0;
+    padding: rem(60) 0;
     background-color: #002172;
+
+    @include respond-to('sm'){
+        padding: rem(120) 0;
+    }
 
     @include e('row'){
         @extend .d-flex;
-        @extend .align-items-stretch;
-        @extend .justify-content-between;
+        @extend .align-items-center;
+        @extend .justify-content-center;
+        @extend .flex-column;
+        
+        margin-bottom: rem(60);
 
-        margin-bottom: rem(80);
+        // resp
+        @extend .flex-md-row;
+        @extend .align-items-md-stretch;
+        @extend .justify-content-md-between;
+
+        @include respond-to(md){
+            margin-bottom: rem(80);
+        }
 
         @include m('center'){
             justify-content: center $i;
@@ -19,6 +33,14 @@
 .#{$prefix}-end {
     padding: 0 rem(5);
     font-style: normal;
+    text-align: center;
+
+    margin-top: rem(30);
+
+    @include respond-to('sm'){
+        text-align: initial;
+        margin-top: 0;
+    }
 
     p {
         font-size: rem(15);
@@ -34,12 +56,17 @@
         margin-bottom: rem(5);
     }
 }
-   
 
 .#{$prefix}-midia {
     @extend .d-flex;
     @extend .align-items-center;
-    
+
+    margin-top: rem(30);
+
+    @include respond-to('sm'){
+        margin-top: 0;
+    }
+
     @include e('item'){
         padding: 0 rem(15);
     }

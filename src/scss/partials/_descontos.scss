@@ -36,8 +36,12 @@
 
     @include e('tit'){
         display: block;
-        font: 600 rem(22) $font-secundaria;
+        font: 600 rem(18) $font-secundaria;
         color: cl(main, primary);
+
+        @include respond-to('md'){
+            font-size: rem(22);
+        }
     }
 
     @include e('obs'){

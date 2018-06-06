@@ -1,0 +1,51 @@
+.btn-menu {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.btn-menu:hover span{
+  background: #fff;
+}
+
+.btn-menu span{
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  position: absolute;
+  transition: .6s all;
+  border-radius: 100px;
+}
+
+.btn-menu span:nth-child(1){
+  top: 0;
+}
+.btn-menu span:nth-child(2){
+    top: 10px;
+    transform-origin: left;
+}
+.btn-menu span:nth-child(3){
+    top: 20px;
+}
+
+.btn-menu.open {
+    z-index: 999;
+}
+
+.btn-menu.open span:nth-child(1){
+  transform: rotate(45deg);
+  top: 15px;
+  transform-origin: right-center;
+}
+.btn-menu.open span:nth-child(2){
+   width: 0;
+   opacity: 0;
+}
+.btn-menu.open span:nth-child(3){
+  transform: rotate(-45deg);
+  top: 15px;
+  transform-origin: right-center;
+}

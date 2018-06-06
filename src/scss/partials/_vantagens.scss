@@ -1,6 +1,14 @@
 .#{$prefix}-icones {
     padding: ($sizeDefault * 5)+px 0;
     background-color: cl(white);
+
+    .container {
+        padding: 0;
+
+        @include respond-to(md){
+            padding-right: rem(15);
+        }
+    }
 }
 
 .#{$prefix}-vantagens {
@@ -8,26 +16,56 @@
     @extend .align-items-stretch;
     
     text-align: center;
+
+    white-space: nowrap;
+    overflow: auto;
+
+    @include respond-to('xs'){
+        white-space: initial;
+        overflow: initial;
+    }
     
     img {
-        width: 150px;
+        width: 100px;
         height: auto;
+
+        @include respond-to('sm'){
+            width: 150px;
+        }
     }
 
     @include e('item'){
-        padding: rem(25);
+        width: 60%;
+        padding: rem(15);
+        flex: none;
+
+        @include respond-to('xs'){
+            width: 100%;
+            padding: rem(15);
+            flex: initial;
+        }
     }
 
     @include e('tit'){
-        font-size: rem(40);
+        font-size: rem(30);
         font-family: $font-hsb;
         color: cl(main, secondary);
         text-transform: uppercase;
         display: block;
         margin: rem(20) 0;
+
+        @include respond-to('sm'){
+            font-size: rem(40);
+        }
     }
 
     @include e('desc'){
-        font-size: rem(16);
+        font-size: rem(14);
+        white-space: initial;
+
+        @include respond-to('md'){
+            width: 100%;
+            font-size: rem(16);
+        }
     }
 }

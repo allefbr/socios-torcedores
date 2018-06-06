@@ -23,7 +23,12 @@ $topSize: $sizeDefault ;
         box-shadow: 0px -11px 13px 11px #002172;
 
         .#{ls}-logo {
-            @include size(185px, 60px);
+            @include size(120px, 40px);
+            
+            @include respond-to('md'){
+                @include size(185px, 60px);
+
+            }
         }
     }
 }
@@ -41,8 +46,12 @@ $topSize: $sizeDefault ;
 }
 
 .tit-pri {
-    font: rem(46) $font-hsb;
+    font: rem(32) $font-hsb;
     text-align: center;
+
+    @include respond-to('sm'){
+        font-size: rem(46);
+    }
 
     &--red {
         color: cl(main, primary);

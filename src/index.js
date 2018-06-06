@@ -12,7 +12,32 @@ import slick from 'slick-carousel'
         slidesToShow: 3,        
         slidesToScroll: 3,
         infinite: false,
-        draggable: false
+        draggable: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    draggable: true,                    
+                }
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true
+                }
+            },
+        ]
     });
 
     // slick
@@ -22,6 +47,32 @@ import slick from 'slick-carousel'
         infinite: false,
         draggable: false,
         centerMode: false,
+
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    draggable: true,
+                }
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true
+                }
+            },
+        ]
     });
 
     // slick
@@ -31,6 +82,17 @@ import slick from 'slick-carousel'
         infinite: false,
         draggable: false,
         centerMode: false,
+        responsive: [            
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    dots: true
+                }
+            },
+        ]
     });
 
     // slick
@@ -40,21 +102,56 @@ import slick from 'slick-carousel'
         arrows: false,
         autoplay: true,
         autoplaySpeed: 2000,
+
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 5,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                }
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 2,
+                }
+            },
+        ]
+
+    });
+    
+
+    // menu mobile
+    $(document).on('click', '.btn-menu', function (e) {
+        e.preventDefault();
+
+        menuMobileShow(this);
     });
 
-    $('.count').each(function () {
-
-        $(this).prop('Counter', 0).animate({
-            Counter: $(this).text()
-        }, {
-            duration: 4000,
-            easing: 'swing',
-            step: function (now) {
-                $(this).text(Math.ceil(now));
-            }
-        });
+    $(document).on('click', '.ls-menu-mobile a', function (e) {
+        menuMobileShow('.btn-menu');
     });
 
+    function menuMobileShow(botao) {
+        var $botao = $(botao);
+        var $botaoFilho = $botao.find('i');
+
+        $botao.toggleClass('open');
+
+        $('.ls-menu-mobile').toggleClass('active');
+
+        return ($botaoFilho.hasClass('fa-bars'))
+            ? $botaoFilho.attr('class', 'fa fa-close')
+            : $botaoFilho.attr('class', 'fa fa-bars');
+    }
+
+    // accordion 
     const allPanels = $('.accordion > .accordion__desc').hide();
     
     $('.accordion > .accordion__tit > a').click(function(e) {

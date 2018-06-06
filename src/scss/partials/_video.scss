@@ -1,12 +1,22 @@
 .#{$prefix}-videos {
-     padding: ($sizeDefault * 8)+px 0;
+    padding: ($sizeDefault * 4)+px 0;
     background-color: cl(white);
+
+    @include respond-to('sm'){
+        padding: ($sizeDefault * 8)+px 0;
+    }
 }
 
 .#{$prefix}-video {
-    padding: rem(60) 0;
     background-color: cl(main, primary);
     position: relative;
+
+    margin-top: 60px;
+
+    @include respond-to('sm'){
+        padding: rem(60) 0;
+        margin-top: 0;
+    }
 
     &:after {
         position: absolute;
@@ -21,6 +31,12 @@
             url('../img/start-blue.png') 200px 0 no-repeat,
             url('../img/start-blue.png') 300px 0 no-repeat;
         background-size: 78px;
+
+        display: none;
+
+        @include respond-to('sm'){
+            display: block;
+        }   
     }
 
     @include e('link'){
@@ -29,12 +45,16 @@
     }
 
     @include e('figure'){
-        width: 70%;
+        width: 100%;
         position: relative;
         flex: none;
-        box-shadow: 5px 5px 13px 5px rgba(#000, .3);
-        transform: translateX(-60px);
+        box-shadow: 5px 5px 13px 5px rgba(#000, .3);        
         
+        @include respond-to('md'){
+            width: 70%;
+            transform: translateX(-60px);
+        }
+
         &:before {
             @include size(100%);
             content: '';
@@ -79,5 +99,10 @@
 
         font: rem(90) $font-klb;
         color: cl(white);
+        display: none;
+
+        @include respond-to('lg'){
+            display: block;
+        }
     }
 }

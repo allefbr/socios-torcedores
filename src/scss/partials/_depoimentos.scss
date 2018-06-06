@@ -1,14 +1,20 @@
 .#{$prefix}-depoimentos {
-    padding: ($sizeDefault * 5)+px 0;
+    @extend %paddingSections;
     background-color: cl(white);
 }
 
-.slick-depoimentos {
-    margin-top: 40px;
+.slick-depoimentos {   
 
+    @include respond-to('sm'){
+        margin-top: 40px;
+    }
+    
     .slick-slide {
-        padding-left: rem(100);
-        padding-right: rem(20);
+        padding: rem(100) rem(15) rem(20);
+
+        @include respond-to('sm'){
+            padding: 0 rem(20) 0 rem(100);
+        }
     }
 
     .slick-arrow {
@@ -23,17 +29,32 @@
 .#{$prefix}-depoimento {
     @extend .d-flex;
     @extend .align-items-center;
-    background: cl(main, secondary);
 
+    @extend .flex-column;
+    // resp
+    @extend .flex-md-row;
+
+    background: cl(main, secondary);
     padding: rem(8) rem(15);
+    text-align: center;
+
+    @include respond-to('sm'){
+        text-align: initial;
+    }
 
     @include e('figure'){
-        @include size(180px);
+        @include size(120px);
         border-radius: 50%;
         overflow: hidden;
-        margin-left: -110px;
         flex: none;
-        margin-right: rem(30);
+        
+        margin-top: -50px;
+        margin-bottom: rem(15);
+
+        @include respond-to('sm'){
+            @include size(180px);
+            margin: 0 rem(30) 0 -110px;
+        }
 
         img {
             @include size(100%, auto);
@@ -49,14 +70,26 @@
     }
 
     @include e('desc'){
-        font: rem(16) $font-secundaria;
+        font: rem(14) $font-secundaria;
         color: cl(white);
-        padding-right: rem(30);
-        font-style: italic;
+        font-style: italic;        
+
+        padding-bottom: rem(30);
+
+        @include respond-to('sm'){
+            font-size: rem(16);
+            padding-right: rem(30);
+            padding-bottom: 0;
+        }
     }
 
     @include e('aspas'){
         width: 80px;
-        margin-top: 60px;
+        display: none $i;
+
+        @include respond-to('sm'){
+            margin-top: 60px;
+            display: block $i;
+        }
     }
 }

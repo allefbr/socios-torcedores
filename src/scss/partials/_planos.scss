@@ -5,28 +5,47 @@
 
 .#{$prefix}-plano {
     $self: &;
-    max-width: 370px;
+
+    width: 100%;
+
+    @include respond-to('xs'){
+        max-width: 370px;
+    }
 
     @include e('content'){
         @extend .d-flex;
         @extend .align-items-center;
         @extend .flex-column;
-        padding: rem(60) rem(40);
+        padding: rem(30) rem(15);
         background-color: cl(main, secondary);
+
+        @include respond-to('md'){
+            padding: rem(60) rem(40);
+        }
     }
 
     @include e('fig'){}
     @include e('img'){
+        max-width: 100%;
+        height: auto;
         transform: rotate(-10deg);
     }
 
     @include e('tit'){
-        font-size: rem(40);
+        font-size: rem(32);
         font-family: $font-hsb;
         color: cl(white);
         text-transform: uppercase;
 
         margin: rem(30) 0;
+
+        @include respond-to('md'){
+            font-size: rem(40);
+        }
+
+        @include respond-to('sm'){
+            font-size: rem(36);
+        }
     }
 
     @include e('price'){
@@ -47,8 +66,15 @@
             background-color: cl(main, secondary);
         }
 
-         .#{$prefix}-list__item {
-            font-size: rem(18);
+         .#{$prefix}-list__item {            
+
+            @include respond-to('sm'){
+                font-size: rem(17);
+            }
+
+            @include respond-to('md'){
+                font-size: rem(18);
+            }
 
             &:before {
                 background-image: url('../img/start-blue.png');
@@ -84,10 +110,18 @@
     @extend .d-flex;
     @extend .align-items-end;
 
+    @extend .justify-content-center;
+    @extend .justify-content-sm-center;
+
+    
     font-family: $font-secundaria;
     font-weight: 600;
-
     color: cl(main, secondary);
+    margin-bottom: rem(15);
+
+    @include respond-to('md'){
+        margin-bottom: 0;
+    }
 
     @include e('cifra') {
         font-size: rem(19);
@@ -114,7 +148,9 @@
 }
 
 .slick-planos {
-    margin-top: rem(30);
+    @include respond-to('sm'){
+        margin-top: rem(30);        
+    }
 
     .slick-track {
         display: flex;
@@ -122,10 +158,13 @@
     }
 
     .slick-slide {
-        padding: 20px;
+        padding: 10px;
+
+        @include respond-to('md'){
+            padding: 20px;
+        }
     }
 }
-
 
 .slick-arrow {
     @include size(30px);

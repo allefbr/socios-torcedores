@@ -1,6 +1,10 @@
 .#{$prefix}-marcas {
-    padding: rem(30);
+    padding: rem(15) 0;
     background-color: cl(main, primary);
+
+    @include respond-to('sm'){
+        padding: rem(30);
+    }
 }
 
 .slick-marcas {

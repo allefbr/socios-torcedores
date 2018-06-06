@@ -1,11 +1,22 @@
 .wrap-menu {
     @extend .d-flex;
     @extend .align-items-center;
+
+    @extend .flex-column;
+                 
+    // resp
+    @extend .flex-sm-row;
+
 }
 
 .#{$prefix}-menu {
     @extend .d-flex;
     @extend .align-items-center;
+
+    @extend .flex-column;
+    
+    // resp
+    @extend .flex-sm-row;
 
     @include e('item'){
         margin: 0 rem( $sizeDefault );
@@ -17,6 +28,47 @@
 
         &:hover, &:focus {
             color: cl(main, primary);
+        }
+    }
+}
+
+
+// mobile
+.#{$prefix}-menu-mobile {
+    @extend %transitionAll;
+    @include size(100%);
+    position: fixed;
+    top: 0;
+    left: 0; 
+    background-color: cl(main, secondary);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+
+    &.active {
+        opacity: 1;
+        z-index: 99;
+        visibility: visible;
+    }
+    
+    .wrap-menu {
+        margin-bottom: rem(30);
+        flex-direction: column-reverse $i;
+    }
+
+    .#{$prefix}-menu {        
+        &__item {
+            margin-top: rem(30);
+        }
+
+        &__link {
+            font-size: rem(22);
         }
     }
 }

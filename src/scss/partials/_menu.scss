@@ -16,7 +16,7 @@
     @extend .flex-column;
     
     // resp
-    @extend .flex-sm-row;
+    @extend .flex-lg-row;
 
     @include e('item'){
         margin: 0 rem( $sizeDefault );

@@ -9,5 +9,5 @@
 ul.ls-menu
     each menu in menus
         li.ls-menu__item
-            a( href='#'+ menu.slug ).ls-menu__link
+            a( href=`#${menu.slug}` data-scroll="true" ).ls-menu__link
                 = menu.name

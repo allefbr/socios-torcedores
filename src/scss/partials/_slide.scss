@@ -34,7 +34,9 @@
 
         @include respond-to('sm'){
             text-align: initial;
+            padding: 0;
         }
+        
     }
 
     @include e('frase-light'){
@@ -44,6 +46,10 @@
         letter-spacing: rem(2);
 
         @include respond-to('sm'){
+            font-size: rem(25);
+        }
+
+        @include respond-to('md'){
             font-size: rem(45);
         }
 
@@ -61,12 +67,12 @@
         display: block;
         margin-bottom: rem(15);
 
-        @include respond-to('lg'){
-            font-size: rem(118);
-        }
-        
         @include respond-to('sm'){
-            font-size: rem(80);
+            font-size: rem(60);
+        }
+
+        @include respond-to('md'){
+            font-size: rem(118);
         }
     }
 }

@@ -51,9 +51,13 @@
         margin-top: -50px;
         margin-bottom: rem(15);
 
-        @include respond-to('sm'){
-            @include size(180px);
-            margin: 0 rem(30) 0 -110px;
+        @include respond-to('sm'){            
+            margin: 0 rem(30) 0 -60px;
+        }
+
+        @include respond-to('md'){
+            @include size(150px);
+            margin-left: -80px;
         }
 
         img {
@@ -76,7 +80,7 @@
 
         padding-bottom: rem(30);
 
-        @include respond-to('sm'){
+        @include respond-to('md'){
             font-size: rem(16);
             padding-right: rem(30);
             padding-bottom: 0;
@@ -87,7 +91,7 @@
         width: 80px;
         display: none $i;
 
-        @include respond-to('sm'){
+        @include respond-to('md'){
             margin-top: 60px;
             display: block $i;
         }

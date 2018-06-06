@@ -12,12 +12,16 @@
     position: relative;
 
     margin-top: 60px;
-
+    
     @include respond-to('sm'){
-        padding: rem(60) 0;
+        padding: rem(30) 0;
         margin-top: 0;
     }
 
+    @include respond-to('sm'){
+        padding: rem(60) 0;        
+    }
+    
     &:after {
         position: absolute;
         right: 2%;
@@ -49,6 +53,11 @@
         position: relative;
         flex: none;
         box-shadow: 5px 5px 13px 5px rgba(#000, .3);        
+        
+        @include respond-to('sm'){
+            width: 90%;
+            transform: translateX(-25px);
+        }
         
         @include respond-to('md'){
             width: 70%;
@@ -101,7 +110,7 @@
         color: cl(white);
         display: none;
 
-        @include respond-to('lg'){
+        @include respond-to('md'){
             display: block;
         }
     }

@@ -2,7 +2,7 @@
     padding: rem(60) 0;
     background-color: #002172;
 
-    @include respond-to('sm'){
+    @include respond-to('md'){
         padding: rem(120) 0;
     }
 
@@ -15,11 +15,11 @@
         margin-bottom: rem(60);
 
         // resp
-        @extend .flex-md-row;
-        @extend .align-items-md-stretch;
-        @extend .justify-content-md-between;
+        @extend .flex-lg-row;
+        @extend .align-items-lg-stretch;
+        @extend .justify-content-lg-between;
 
-        @include respond-to(md){
+        @include respond-to('md'){
             margin-bottom: rem(80);
         }
 
@@ -30,6 +30,21 @@
     }
 }
 
+.#{$prefix}-ends {
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-center;
+
+    @extend .flex-column;
+
+    @extend .flex-md-row;
+    @extend .align-items-md-start;
+    
+
+    width: 100%;
+    justify-content: space-evenly;
+}
+
 .#{$prefix}-end {
     padding: 0 rem(5);
     font-style: normal;
@@ -37,13 +52,13 @@
 
     margin-top: rem(30);
 
-    @include respond-to('sm'){
+    @include respond-to('md'){
         text-align: initial;
         margin-top: 0;
     }
 
     p {
-        font-size: rem(15);
+        font-size: rem(14);
         font-family: 'Open sans';
         font-style: normal;
         color: cl(white);
@@ -63,12 +78,22 @@
 
     margin-top: rem(30);
 
-    @include respond-to('sm'){
+    @include respond-to('md'){
         margin-top: 0;
     }
 
     @include e('item'){
         padding: 0 rem(15);
+
+        @include respond-to('sm'){
+            padding-right: rem(10);
+            padding-left: rem(10);
+        }
+
+        @include respond-to('lg'){
+            padding-right: rem(15);
+            padding-left: rem(15);
+        }
     }
 
     @include e('link'){

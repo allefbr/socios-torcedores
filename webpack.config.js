@@ -22,7 +22,12 @@ module.exports = {
             },
             {
                 test: /\.pug$/i,
-                use: ['pug-loader']
+                use: [{
+                    loader: 'pug-loader',
+                    options: {
+                        pretty: true
+                    }
+                }]
             },
             // SASS
             {

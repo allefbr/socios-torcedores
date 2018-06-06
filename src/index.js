@@ -1,11 +1,21 @@
 import style from "./scss/main.scss"
 import scrollAddClass from './js/menu'
 import slick from 'slick-carousel'
+import magnific from './js/magnific-popup'
 
 (($) => {
     const top = $('.ls-top');
-
     scrollAddClass(top, document, 'fixed' );
+    
+    $('.popup-youtube').magnificPopup({
+        disableOn: 700,
+        type: 'iframe',
+        mainClass: 'mfp-fade',
+        removalDelay: 160,
+        preloader: false,
+
+        fixedContentPos: false
+    });
 
     // slick
     $('.slick-planos').slick({        
@@ -126,7 +136,6 @@ import slick from 'slick-carousel'
 
     });
     
-
     // menu mobile
     $(document).on('click', '.btn-menu', function (e) {
         e.preventDefault();
@@ -144,11 +153,7 @@ import slick from 'slick-carousel'
 
         $botao.toggleClass('open');
 
-        $('.ls-menu-mobile').toggleClass('active');
-
-        return ($botaoFilho.hasClass('fa-bars'))
-            ? $botaoFilho.attr('class', 'fa fa-close')
-            : $botaoFilho.attr('class', 'fa fa-bars');
+        $('.ls-menu-mobile').toggleClass('active');        
     }
 
     // accordion 

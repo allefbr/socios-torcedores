@@ -9,7 +9,7 @@
     @extend .flex-column;
     color: cl(white);
 
-    @include respond-to('sm'){
+    @include respond-to('md'){
         margin-top: rem(60);
     }
 
@@ -18,7 +18,7 @@
         @extend .flex-column;
         margin: rem(15) 0;
 
-        @include respond-to('sm'){
+        @include respond-to('md'){
             margin: rem(30) 0;
         }
 
@@ -36,7 +36,7 @@
             color: cl(white);            
             letter-spacing: 1px;
 
-            @include respond-to('sm'){
+            @include respond-to('md'){
                 font-size: rem(22);
             }
 

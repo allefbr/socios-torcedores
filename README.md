@@ -1,7 +1,7 @@
 # Sócios Torcedores
 Este repositório contém os arquivos HTML/CSS da landing page dos sócios torcedores, desenvolvido com as mais mordenas ferramentas de Front-end.
 
-![alt text](https://github.com/allefbr/socios-torcedores/blob/master/escudo.png "Logo Socios torcedores")
+![alt text](https://github.com/allefbr/socios-torcedores/blob/master/preview.jpg "Preview da landing page")
 
 As seguintes tecnologias foram usadas.
 *   [Pug](https://pugjs.org/api/getting-started.html).

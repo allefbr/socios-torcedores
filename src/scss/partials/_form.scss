@@ -61,6 +61,16 @@
 
         &:focus {
             border-color: #fff;
+
+            & + label {
+                top: 5px;
+                left: 15px;
+                z-index: 1;
+                font-size: rem(11);
+                font-family: $font-hsr;
+                letter-spacing: rem(1);
+                transform: translateY(0);
+            }
         }
     }
     

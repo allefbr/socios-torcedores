@@ -66,21 +66,45 @@
             background-color: cl(main, secondary);
         }
 
-         .#{$prefix}-list__item {            
+        .#{$prefix}-list {
+            height: initial;
+        }
 
+        .#{$prefix}-list__item {
             @include respond-to('sm'){
                 font-size: rem(17);
             }
 
             @include respond-to('md'){
-                font-size: rem(18);
+                font-size: rem(17);
             }
 
             &:before {
                 background-image: url('../img/start-blue.png');
             }
-         }
+        }
     }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {    
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: darken( cl(main, secondary), 5% ); 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: darken( cl(main, secondary), 15% ); 
 }
 
 .#{$prefix}-list {
@@ -89,10 +113,17 @@
     font: rem(14) $font-secundaria;
     color: cl(white);
 
+    height: 180px;
+    overflow: hidden;
+
+    &:hover {
+        overflow: auto;
+    }
+
     @include e('item'){
         @extend .d-flex;
         @extend .align-items-start;
-        margin-bottom: rem(10);
+        margin-bottom: rem(20);
 
         &:before {
             content: '';

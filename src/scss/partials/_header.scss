@@ -45,6 +45,13 @@ $topSize: $sizeDefault ;
     }
 }
 
+.icon-whatsapp {
+    @include size(16px);
+    display: inline-block;
+    background: url('../img/icon-whatsapp.png') no-repeat;
+    margin-right: 10px;
+}
+
 .tit-pri {
     font: rem(32) $font-hsb;
     text-align: center;

@@ -1,4 +1,4 @@
-# Sócios Torcedores
+# Sócios Torcedores Fortaleza
 Este repositório contém os arquivos HTML/CSS da landing page dos sócios torcedores, desenvolvido com as mais mordenas ferramentas de Front-end.
 
 ![alt text](https://github.com/allefbr/socios-torcedores/blob/master/preview.jpg "Preview da landing page")

@@ -1,0 +1,46 @@
+.destaque-logado {
+    padding: rem(70) 0;
+    background-color: #eee;
+}
+
+.box-destaque {
+
+    @include e('tit'){
+        font: rem(28) $font-hsb;
+        color: cl(main, secondary);
+        text-transform: uppercase;
+        margin-bottom: rem(10);
+    }
+
+    @include e('figure'){
+        border-top: 4px solid cl(main, secondary);
+
+        img {
+            display: flex;
+            @include size(100%, auto);
+        }
+
+        @include m('red'){
+            border-color: cl(main, primary);
+        }
+    }
+
+    @include e('link'){
+        font: rem(22) $font-hsb;
+        text-transform: uppercase;
+
+        @extend .d-flex;
+        @extend .align-items-center;
+        @extend .justify-content-center;
+
+        width: 100%;
+        padding: rem(15);
+        background-color: #fff;
+        color: #020a6a;
+
+        &:hover {
+            background-color: #020a6a;
+            color: #fff;
+        }
+    }
+}

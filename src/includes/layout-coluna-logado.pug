@@ -1,0 +1,28 @@
+extends layout-logado.pug
+
+block content
+  .container.page-colunas
+    .row
+      aside.aside-int.col-sm-4.col-md-3
+        h3.tit-pri.tit-pri--blue Meu plano
+
+        div.box-highlight
+          b.box-highlight__subtit Plano atual
+          strong.box-highlight__tit Leão de Aço
+
+        nav.menu-lateral
+          ul.list-menu
+            li.list-menu__item
+              a(href="#") Adesões
+
+            li.list-menu__item
+              a(href="#") Dependentes
+            
+            li.list-menu__item
+              a(href="#") Produtos
+
+            li.list-menu__item
+              a(href="#") Pagamentos
+
+      article.col-sm-8.col-md-9
+        block colunaDireita

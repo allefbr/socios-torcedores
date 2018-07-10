@@ -1,0 +1,31 @@
+header(data-scroll-header).ls-top.ls-top--logado
+  div.container.ls-top__flex.hidden-md-down
+    h1.ls-logo
+      a(href="#") Sócios Torcedores
+    
+    .ls-frase        
+        strong.ls-frase__hastag #joguejunto                
+        - var sociosNumber = '<b>19.702</b>';
+        p.ls-frase__subtit Hoje somos !{ sociosNumber } sócios
+
+    div.wrap-menu
+      include menu.pug
+      a(href="#").ls-btn Login
+  
+  div.container.ls-top__flex.ls-top__mobile.hidden-lg-up
+    h1.ls-logo
+      a(href="#") Sócios Torcedores
+    
+    a(href="#").btn-menu 
+      span
+      span
+      span
+
+    div.ls-menu-mobile
+      address.ls-phone
+        i.icon-whatsapp
+        span (85) 99194.3513
+
+      div.wrap-menu
+        include menu.pug
+        a(href="#").ls-btn Login

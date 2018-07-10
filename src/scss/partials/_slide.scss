@@ -76,3 +76,17 @@
         }
     }
 }
+
+
+.single-item {
+    .slick-next {
+        right: 2%;
+        z-index: 9;
+
+    }
+
+    .slick-prev {
+        left: 2%;
+        z-index: 9;
+    }
+}

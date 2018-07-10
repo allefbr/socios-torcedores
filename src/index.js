@@ -16,6 +16,9 @@ import magnific from './js/magnific-popup'
 
         fixedContentPos: false
     });
+    
+    // slick
+    $('.single-item').slick();
 
     // slick
     $('.slick-planos').slick({        

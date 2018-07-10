@@ -45,4 +45,16 @@
         cursor: default;
     }
 
+
+    @include m('outline'){
+        background-color: transparent;
+        color: cl(main, primary);
+        border: 2px solid cl(main, primary) $i;
+        margin-top: rem(10);
+
+        &:hover {
+            background-color: cl(main, primary);
+            color: cl(white);
+        }
+    }
 }

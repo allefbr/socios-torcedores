@@ -1,0 +1,46 @@
+
+// planos
+mixin plano(img, tit, listArr, precoArr, link, dest)
+  div(class=dest ? 'ls-plano ls-plano--red': 'ls-plano')
+      div.ls-plano__content
+          figure.ls-plano__fig                
+              img(src=require(`./img/cartoes/${img}`) alt=`Imagem do cartão ${tit}` width="200" height="125" ).ls-plano__img
+              
+          strong.ls-plano__tit= tit
+
+          ul.ls-list
+              each item in listArr 
+                  li.ls-list__item= item
+      
+      div.ls-plano__price
+          div.row
+              div.col-lg-6
+                  div.ls-price
+                      span.ls-price__cifra= precoArr.cifra
+                      strong.ls-price__decimal= precoArr.decimal
+                      span.ls-price__cents= precoArr.cents
+                      span.ls-price__mouth= precoArr.mouth
+              div.col-lg-6
+                  a(href=link).ls-btn Associe-se
+
+// accordions
+mixin accordions(tit, status, datas)
+ .accordion.box-tables
+    h2.accordion__tit.box-tables__tit
+      a(href="#")
+        span 
+          = tit
+          small / #{status} 
+        strong= datas
+    
+    div.accordion__desc.box-tables__desc
+      if block
+        block        
+
+// logado
+- 
+  const sprite = JSON.stringify( self.htmlWebpackPlugin.files.sprites )
+  require('./icones/ficha.svg')
+  require('./icones/config.svg')
+  require('./icones/plano.svg')
+  require('./icones/pontos.svg')

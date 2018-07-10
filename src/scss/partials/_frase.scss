@@ -1,0 +1,32 @@
+.#{ $prefix }-frase {
+
+    color: cl(white);
+    text-align: center;
+    padding: rem(30);
+
+    @include respond-to('sm'){
+        text-align: initial;
+        padding: 0;
+    }
+
+    @include e('subtit'){
+        font: 400 rem(18) $font-hsl;
+        text-transform: uppercase;
+        color: cl(white);
+        letter-spacing: rem(2);
+
+        b {
+            font-weight: 800;
+            font-family: $font-secundaria;
+            background-color: cl(main, primary);
+        }
+    }
+
+    @include e('hastag'){
+        font-size: rem(32);
+        font-family: $font-klb;
+        line-height: 1;
+        display: block;
+        margin-bottom: rem(8);
+    }
+}

@@ -1,0 +1,70 @@
+extends includes/layout-coluna-logado.pug
+
+mixin dependentes( params )
+  each content in params
+    +accordions(content.tit, content.status, content.datas)
+        ul.list-normal
+            li.list-normal__item
+                strong 
+                    | Máximo: #{content.maximo}
+            li.list-normal__item
+                strong 
+                    | Disponível: #{content.disponivel}
+
+        form.ls-form.ls-form--white
+            div.ls-form__colunas.ls-form__colunas--three
+                div.ls-form__control
+                    input(placeholder="CEP"  id="cep" type="text" name="cep").ls-form__input
+                    label(for="cep").ls-form__label Nome
+
+                div.ls-form__control
+                    input(placeholder="Rua"  id="rua" type="text" name="rua").ls-form__input
+                    label(for="rua").ls-form__label Parentesco
+
+                div.ls-form__control
+                    button.ls-btn.ls-form__submit Adicionar
+
+        p.text-obs Art. 5º - O programa “Leões do Pici” prevê a figura do dependente da associação. A inclusão de dependentes junto ao titular da associação ocorre para os seguintes casos: conjugue, filhos com até 16 anos de idade, filhas com até 18 anos de idade e com estado civil como solteira. Será permitido a inclusão de pais como dependentes, desde que com mais de 65 anos de idade. Para a conclusão da adesão do dependente, deverão ser apresentados os documentos necessários a comprovação regular da dependência, só assim será entregue a carteira do sócio dependente. Em caso de não comprovação, o programa devolverá quaquer quantia paga pela adesão do dependente, e cancelará essa adesão.
+        
+
+block colunaDireita
+  -
+    const dependentesContent = [
+      {
+        tit: 'Leão de aço',
+        status: 'Adimplente',
+        datas: '11/01/2018 à 10/01/2019',
+        maximo: 3,
+        disponivel: 3,            
+      },      
+      {
+        tit: 'Leão de aço',
+        status: 'Adimplente',
+        datas: '11/01/2018 à 10/01/2019',
+        maximo: 3,
+        disponivel: 3,            
+      },      
+      {
+        tit: 'Leão de aço',
+        status: 'Adimplente',
+        datas: '11/01/2018 à 10/01/2019',
+        maximo: 3,
+        disponivel: 3,            
+      },      
+      {
+        tit: 'Leão de aço',
+        status: 'Adimplente',
+        datas: '11/01/2018 à 10/01/2019',
+        maximo: 3,
+        disponivel: 3,            
+      },      
+      {
+        tit: 'Leão de aço',
+        status: 'Adimplente',
+        datas: '11/01/2018 à 10/01/2019',
+        maximo: 3,
+        disponivel: 3,            
+      },      
+    ];
+
+  +dependentes(dependentesContent)

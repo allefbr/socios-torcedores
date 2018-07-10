@@ -1,0 +1,113 @@
+.nav-logado {
+    padding: rem(30) 0;
+    background-color: cl(main, primary);
+}
+
+.box-circle {
+    @extend .d-flex;
+    @extend .align-items-center;
+
+    @include e('figure'){
+        @include size(100px);
+        border: 4px solid cl(white);
+        border-radius: 50%;
+        overflow: hidden;
+        flex: none;
+        margin-right: rem(15);
+
+        @include respond-to('sm'){
+            @include size(147px);
+            margin-right: rem(30);
+        }
+    }
+
+    @include e('infos'){
+        font-family: $font-klb;
+        color: cl(white);
+    }
+
+    @include e('tit'){
+        font-size: rem(22);
+        margin-bottom: rem(10);
+
+        @include respond-to('sm'){
+            font-size: rem(32);
+        }
+
+        @include respond-to('md'){
+            font-size: rem(42);
+        }
+    }
+
+    @include e('subtit'){
+        font-family: $font-klb;
+        color: cl(white);
+
+        font-size: rem(16);
+
+        @include respond-to('sm'){
+            font-size: rem(18);
+        }
+
+        @include respond-to('md'){
+            font-size: rem(22);
+        }
+    }
+}
+
+.menu-logado {
+    width: 100%;
+}
+
+.menu-icon {
+    width: 100%;
+    overflow: auto;
+    @extend .d-flex;
+    @extend .align-items-center;
+    @extend .justify-content-start;
+
+    @include e('item'){
+        width: 100%;
+        padding: 10px;
+
+        &.active {
+
+            svg {
+                fill: #fff;
+            }
+
+        }
+    }
+
+    @include e('box'){
+        @include size(65px);
+        margin-bottom: rem(15);
+
+        fill: #750f0f;
+
+        svg {
+            @extend %transitionAll;
+        }
+    }
+
+    a {
+        @extend .d-flex;
+        @extend .align-items-center;
+        @extend .justify-content-center;
+        @extend .flex-column;
+
+        font-size: rem(19);
+        font-family: $font-hsb;
+        color: cl(white);
+        text-transform: uppercase;
+
+        &:hover {
+
+
+            svg {
+                fill: rgba( #fff , .5);
+            }
+
+        }
+    }
+}

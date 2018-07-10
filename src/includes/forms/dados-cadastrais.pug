@@ -1,0 +1,34 @@
+form.ls-form.ls-form--blue
+    strong.ls-form__tit Dados cadastrais
+
+    div.ls-form__control
+        input(name="nome" id="nome" placeholder="Nome completo").ls-form__input
+        label(for="nome").ls-form__label Nome completo
+                
+    div.ls-form__control
+        input(placeholder="E-mail" id="email" type="email" name="email").ls-form__input
+        label(for="email").ls-form__label E-mail
+
+    div.ls-form__control
+        input(placeholder="CPF" id="cpf" name="cpf").ls-form__input
+        label(for="cpf").ls-form__label CPF
+
+    div.ls-form__colunas
+        div.ls-form__control
+            input(placeholder="Nascimento"  id="nascimento" type="text" name="nascimento").ls-form__input
+            label(for="nascimento").ls-form__label Nascimento
+
+        div.ls-form__control
+            input(placeholder="Estado Civil"  id="estadocivil" type="text" name="estado-civil").ls-form__input
+            label(for="estadocivil").ls-form__label Estado Civil
+    
+    div.ls-form__colunas
+        div.ls-form__control
+            input(placeholder="Telefone"  id="telefone" type="text" name="telefone").ls-form__input
+            label(for="telefone").ls-form__label Telefone
+
+        div.ls-form__control
+            input(placeholder="Celular"  id="celular" type="text" name="celular").ls-form__input
+            label(for="celular").ls-form__label Celular
+
+    button.ls-btn.ls-form__submit Alterar dados

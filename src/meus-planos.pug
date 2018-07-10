@@ -1,0 +1,160 @@
+extends includes/layout-logado.pug
+
+block content 
+  .container-full.page-meu-planos
+    
+    h2.tit-pri.tit-pri--blue Escolha seu plano
+
+    - 
+        var objContents = [
+            { 
+                img: 'cartao1.png',
+                tit: 'Leão kids', 
+                listArr: [
+                    'Desconto de 100% no ingresso para jogos em que o fortaleza for mandante', 
+                    'Menores de 12 anos',
+                    'Entradas exclusivas',
+                    'Clube de vantagens', 
+                    'Não há opção para inclusão de dependentes'
+                ],
+                precoArr: { 
+                    cifra: 'r$', 
+                    decimal: '24', 
+                    cents: ',90', 
+                    mouth: '/mês' 
+                }, 
+                link: '#', 
+                dest: ''
+            }, 
+            { 
+                img: 'cartao2.png',
+                tit: 'Leão fiel', 
+                listArr: [
+                    'Desconto de 100% no ingresso para jogos em que o fortaleza for mandante', 
+                    'Menores de 12 anos',
+                    'Clube de vantagens',
+                    'Não há opção para inclusão de dependentes', 
+                ], 
+                precoArr: { 
+                    cifra: 'r$', 
+                    decimal: '44', 
+                    cents: ',90', 
+                    mouth: '/mês'
+                }, 
+                link: '#', 
+                dest: '1' 
+            },
+            { 
+                img: 'cartao3.png',            
+                tit: 'Leão de aço', 
+                listArr: [
+                    'Desconto de 100% no ingresso para jogos em que o fortaleza for mandante',
+                    'Entradas exclusivas',
+                    'Clube de vantagens',
+                    'Inclusão de até 3 dependentes'
+                ], 
+                precoArr: { 
+                    cifra: 'r$', 
+                    decimal: '69', 
+                    cents: ',90', 
+                    mouth: '/mês'
+                }, 
+                link: '#', 
+                dest: '' 
+            },
+            { 
+                img: 'cartao4.png',            
+                tit: 'Leão do Pici', 
+                listArr: [
+                    'Desconto de 100% no ingresso para jogos em que o Fortaleza for mandante',
+                    'Entradas exclusivas',
+                    'Clube de vantagens',
+                    'Não há opção para inclusão de dependentes',                    
+                ], 
+                precoArr: { 
+                    cifra: 'r$', 
+                    decimal: '44', 
+                    cents: ',90', 
+                    mouth: '/mês'
+                }, 
+                link: '#', 
+                dest: '1' 
+            },
+            { 
+                img: 'cartao5.png',            
+                tit: 'Sócio proprietário', 
+                listArr: [                                      
+                    'Desconto de 100% no ingresso para jogos em que o Fortaleza for mandante',
+                    'Menores de 12 anos',
+                    'Entradas exclusivas',
+                    'Clube de vantagens',
+                    'Não há opção para inclusão de dependentes',
+                ], 
+                precoArr: { 
+                    cifra: 'r$', 
+                    decimal: '24', 
+                    cents: ',90', 
+                    mouth: '/mês'
+                }, 
+                link: '#', 
+                dest: '' 
+            },
+            { 
+                img: 'cartao6.png',
+                tit: 'Conselheiro',
+                listArr: [                                      
+                    'Desconto de 100% no ingresso para jogos em que o Fortaleza for mandante',
+                    'Entradas exclusivas',
+                    'Clube de vantagens',
+                    'Não há opção para inclusão de dependentes',
+                ], 
+                precoArr: { 
+                    cifra: 'r$', 
+                    decimal: '44', 
+                    cents: ',90', 
+                    mouth: '/mês'
+                }, 
+                link: '#', 
+                dest: '1' 
+            },
+            { 
+                img: 'cartao7.png',
+                tit: 'Leão do interior',
+                listArr: [                                      
+                    'Desconto de 100% no ingresso para jogos em que o Fortaleza for mandante',
+                    'Entradas exclusivas',
+                    'Clube de vantagens',
+                    'Inclusão de até 3 dependentes',
+                ], 
+                precoArr: { 
+                    cifra: 'r$', 
+                    decimal: '69', 
+                    cents: ',90', 
+                    mouth: '/mês'
+                }, 
+                link: '#', 
+                dest: '' 
+            },
+            { 
+                img: 'cartao8.png',
+                tit: 'Leão pelo Brasil',
+                listArr: [                                      
+                    'Desconto de 100% no ingresso para jogos em que o Fortaleza for mandante',
+                    'Entradas exclusivas',
+                    'Clube de vantagens',
+                    'Não há opção para inclusão de dependentes',
+                ], 
+                precoArr: { 
+                    cifra: 'r$', 
+                    decimal: '44', 
+                    cents: ',90', 
+                    mouth: '/mês'
+                }, 
+                link: '#', 
+                dest: '1' 
+            },
+        ];
+        
+    div.list-planos
+        each content, index in objContents                       
+            +plano(content.img, content.tit, content.listArr, content.precoArr, content.link, content.dest)

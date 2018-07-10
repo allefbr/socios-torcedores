@@ -1,0 +1,15 @@
+
+include config.pug
+
+doctype html
+html(lang='pt-br')
+  include head.pug
+
+  body
+    include topo-logado.pug
+    include nav-logado.pug
+    
+    block content
+
+    include marcas.pug
+    include footer.pug

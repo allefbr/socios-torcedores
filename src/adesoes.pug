@@ -1,0 +1,159 @@
+extends includes/layout-coluna-logado.pug
+
+mixin adesoes( params )
+  each content in params
+    +accordions(content.tit, content.status, content.datas)
+      div.row
+        .col-md-5.col-lg-4
+          img(src=require(`./img/cartoes/${content.cartao}`), alt="" class="card-shadow img-resp")/
+        .col-md-7.col-lg-8
+          ul.list-infos.list-infos--col2
+            each info in content.infos
+              li.list-infos__item
+                strong= info.nome
+                span= info.valor
+
+block colunaDireita
+  -
+    const adesoesContent = [
+      {
+        tit: 'Leão de aço',
+        status: 'Adimplente',
+        datas: '11/01/2018 à 10/01/2019',
+        cartao: 'cartao3.png',
+        infos: [
+          {
+            nome: 'Plano',
+            valor: 'Leão de aço ( Código: 47732)'
+          },
+
+          {
+            nome: 'Plano',
+            valor: 'Leão de aço ( Código: 47732)',
+          },
+
+          {
+            nome: 'Valor',
+            valor: 'R$ 719,88',
+          },
+          {
+            nome: 'Data de adesão',
+            valor: '22/12/2017',
+          },
+          {
+            nome: 'Meio de pagamento',
+            valor: 'Crédito Recorrente',
+          },
+          {
+            nome: 'Período',
+            valor: '11/01/2018 à 10/01/2019  ',
+          },
+          {
+            nome: 'Plano de pagamento',
+            valor: '12x',
+          },
+          {
+            nome: 'Status',
+            valor: 'Adimplente',
+          },
+          {
+            nome: 'Parcelas',
+            valor: '12',
+          },
+        ]
+      },
+      {
+        tit: 'Leão de aço',
+        status: 'Adimplente',
+        datas: '11/01/2018 à 10/01/2019',
+        cartao: 'cartao1.png',
+        infos: [
+          {
+            nome: 'Plano',
+            valor: 'Leão de aço ( Código: 47732)'
+          },
+
+          {
+            nome: 'Plano',
+            valor: 'Leão de aço ( Código: 47732)',
+          },
+
+          {
+            nome: 'Valor',
+            valor: 'R$ 719,88',
+          },
+          {
+            nome: 'Data de adesão',
+            valor: '22/12/2017',
+          },
+          {
+            nome: 'Meio de pagamento',
+            valor: 'Crédito Recorrente',
+          },
+          {
+            nome: 'Período',
+            valor: '11/01/2018 à 10/01/2019  ',
+          },
+          {
+            nome: 'Plano de pagamento',
+            valor: '12x',
+          },
+          {
+            nome: 'Status',
+            valor: 'Adimplente',
+          },
+          {
+            nome: 'Parcelas',
+            valor: '12',
+          },
+        ]
+      },
+      {
+        tit: 'Leão de aço',
+        status: 'Adimplente',
+        datas: '11/01/2018 à 10/01/2019',
+        cartao: 'cartao1.png',
+        infos: [
+          {
+            nome: 'Plano',
+            valor: 'Leão de aço ( Código: 47732)'
+          },
+
+          {
+            nome: 'Plano',
+            valor: 'Leão de aço ( Código: 47732)',
+          },
+
+          {
+            nome: 'Valor',
+            valor: 'R$ 719,88',
+          },
+          {
+            nome: 'Data de adesão',
+            valor: '22/12/2017',
+          },
+          {
+            nome: 'Meio de pagamento',
+            valor: 'Crédito Recorrente',
+          },
+          {
+            nome: 'Período',
+            valor: '11/01/2018 à 10/01/2019  ',
+          },
+          {
+            nome: 'Plano de pagamento',
+            valor: '12x',
+          },
+          {
+            nome: 'Status',
+            valor: 'Adimplente',
+          },
+          {
+            nome: 'Parcelas',
+            valor: '12',
+          },
+        ]
+      }
+    ];
+
+  +adesoes(adesoesContent)

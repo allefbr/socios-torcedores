@@ -12,24 +12,29 @@ $topSize: $sizeDefault ;
     color: cl(white);
     z-index: 9999;
 
+    &.fixed {
+        background-color: #002172;
+        box-shadow: 0px -11px 13px 11px #002172;
+
+        .#{$prefix}-logo {
+            @include size(120px, 40px);
+            
+            @include respond-to('md'){
+                @include size(185px, 60px);
+            }
+        }
+    }
+
     @include e('flex'){
         @extend .d-flex;
         @extend .align-items-center;
         @extend .justify-content-between;        
     }
 
-    &.fixed {
-        background: #002172;
-        box-shadow: 0px -11px 13px 11px #002172;
-
-        .#{ls}-logo {
-            @include size(120px, 40px);
-            
-            @include respond-to('md'){
-                @include size(185px, 60px);
-
-            }
-        }
+    @include m('logado'){
+        position: static;
+        padding: rem(40) 0;
+        background: url('../img/internas/bg-topo-int.jpg') center no-repeat;
     }
 }
 
@@ -66,5 +71,9 @@ $topSize: $sizeDefault ;
 
     &--white {
         color: cl(white);
+    }
+
+    &--blue {
+        color: cl(main, secondary);
     }
 }

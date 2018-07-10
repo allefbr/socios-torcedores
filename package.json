@@ -35,5 +35,8 @@
     "webpack": "^4.10.1",
     "webpack-cli": "^2.1.4",
     "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "svg-sprite-loader": "^3.8.0"
   }
 }

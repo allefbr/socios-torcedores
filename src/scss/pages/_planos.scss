@@ -1,0 +1,33 @@
+.page-meu-planos {
+    padding: rem(80) 0;
+
+    .tit-pri {
+        margin-bottom: rem(60);
+    }
+}
+
+.list-planos {
+    @extend .d-flex;
+    @extend .align-items-stretch;
+    @extend .justify-content-center;
+    @extend .flex-wrap;
+
+    .#{ $prefix }-plano {
+        padding: rem(10);
+
+        width: 100%;
+
+        @include respond-to('sm'){
+            width: calc(100% / 2 );
+        }
+
+        
+        @include respond-to('md'){
+            width: calc(100% / 3 );
+        }
+        
+        @include respond-to('lg'){
+            width: calc(100% / 4 );
+        }
+    }
+}

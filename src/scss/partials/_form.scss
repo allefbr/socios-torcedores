@@ -1,4 +1,5 @@
 .#{$prefix}-form {
+    $self: &;
     padding: rem($sizeDefault + 5);
     background-color: #001c43;
 
@@ -82,11 +83,86 @@
         .#{$prefix}-form__control:first-child {
             margin-right: 20px;
         }
+
+        @include m('three'){
+            align-items: stretch $i;
+
+            .#{$prefix}-form__control {
+                flex-basis: 20%;
+                margin-right: rem(15);
+
+                &:first-child {
+                    flex-basis: 60%;                    
+                }
+
+                &:last-child {
+                    flex-basis: 20%;
+                }
+            }
+
+            .#{$prefix}-form__submit{
+                height: 100%;
+            }
+        }
     }
 
     @include e('submit'){
         display: flex;
         width: 100%;        
         border: 0;
+    }
+
+
+    // mod
+    @include m('blue'){
+        background-color: transparent;
+
+        @include e('tit', $self) {
+            color: cl(main, secondary);
+            text-align: left;
+            font-size: rem(26);
+        }
+
+        @include e('label', $self){
+            color: #164ed9;
+        }
+
+        @include e('input', $self){
+            border-color: #001c43;
+            color: #001c43;
+
+            &:placeholder-shown  + label {
+                color: #164ed9;
+            }
+        }
+    }
+
+    @include m('white'){
+        background-color: transparent;
+        padding: 0;        
+
+        @include e('tit', $self) {
+            color: cl(main, secondary);
+            text-align: left;
+            font-size: rem(26);
+        }
+
+        @include e('label', $self){
+            color: #164ed9;
+        }
+
+        @include e('control', $self){
+            background-color: #fff;
+        }
+
+        @include e('input', $self){
+            border-color: #fff;
+            color: #001c43;            
+
+            &:placeholder-shown  + label {
+                color: #164ed9;
+            }
+        }
+
     }
 }

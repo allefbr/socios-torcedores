@@ -148,3 +148,46 @@
         letter-spacing: 1px;
     }
 }
+
+.rowGrid {
+    padding: rem(10);
+    background-color: #fff;
+    margin-bottom: rem(10);
+
+    p {
+        font: rem(16) $font-hsl;
+        color: #00227b;
+    }
+
+    p + p {
+        margin-top: rem(8);
+    }
+
+    span {
+        display: block;
+        font: rem(14) $font-hsb;
+        text-transform: uppercase;
+        color: #00227b;
+        margin-top: rem(10);
+        margin-bottom: rem(5);
+    }
+    
+
+    @include e('footer'){
+        @extend .d-flex, .flex-column;
+        margin-top: rem(15);
+
+        p {
+            margin-bottom: rem(5);
+        }
+    }
+
+    @include m('header'){
+        background-color: transparent;
+
+        p {
+            font: rem(14) $font-hsb;
+            text-transform: uppercase;
+        }
+    }
+}

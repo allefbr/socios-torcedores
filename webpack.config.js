@@ -90,6 +90,11 @@ module.exports = {
             template: "./src/dependentes.pug",
             filename: "./dependentes.html",
         }),
+        
+        new HtmlWebPackPlugin({
+            template: "./src/produtos.pug",
+            filename: "./produtos.html",
+        }),
 
         new SpritePlugin({
             plainSprite: true

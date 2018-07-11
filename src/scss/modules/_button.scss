@@ -57,4 +57,16 @@
             color: cl(white);
         }
     }
+
+
+    @include m('addcart'){
+        font-size: rem(12);
+        border: 0;
+        padding: rem(8) rem(8) rem(8) rem(18);
+        background: cl(main, primary) url('../img/icon-carrinho.png') 4px center no-repeat;
+
+        &:hover {
+            background: cl(main, secondary) url('../img/icon-carrinho.png') 4px center no-repeat;
+        }
+    }
 }

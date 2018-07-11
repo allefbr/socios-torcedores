@@ -1,0 +1,120 @@
+extends includes/layout-coluna-logado.pug
+
+mixin accProduto( params )
+  each content in params
+    +accordions(content.tit, content.status, content.datas)
+        +rowGrid( content.produtos )            
+
+mixin rowGrid( params )
+    each content in params
+        div(class=content.header ? 'row rowGrid rowGrid--header d-none d-sm-flex d-md-flex': 'row rowGrid')
+            .col-sm-5
+                span.d-sm-none Produto
+                p= content.produto
+            .col-sm-2
+                span.d-sm-none Valor
+                p= content.valor
+            .col-sm-2
+                span.d-sm-none Parcelas
+                p= content.parcelas
+            .col-sm-3
+                span.d-sm-none Pagamentos
+                each pag in content.pagamentos
+                    p= pag                
+                if block
+                    block
+
+                unless content.header == '1'
+                    .rowGrid__footer
+                        p Valor selecionado: R$ 0,00
+                        button.ls-btn.ls-btn--addcart Adicionar ao carrinho
+
+block colunaDireita
+  -
+    const produtosContent = [
+      {
+        tit: 'Leão de aço',
+        status: 'Adimplente',
+        datas: '11/01/2018 à 10/01/2019',
+        produtos: [
+            {
+                header: '1',
+                produto: 'Produto',
+                valor: 'Valor',
+                parcelas: 'Parcelas',
+                pagamentos: [
+                    'Pagamento',
+                ],
+            },
+            {
+                header: '',
+                produto: 'Boné Sócio Torcedor (Promoção PAIS 2017)',
+                valor: 'R$ 0,00',
+                parcelas: '1',
+                pagamentos: [
+                    '1ª  22/12/2017 R$ R$ 0,00',
+                ],
+            },
+            {
+                header: '',
+                produto: 'Leão Aço',
+                valor: 'R$ 719,88',
+                parcelas: '12',
+                pagamentos: [                    
+                    '1ª  22/12/2017 R$ R$ 59,99, MASTER (ON-LINE)',
+                    '2ª  22/01/2018 R$ R$ 59,99, MASTER (ON-LINE)',
+                    '3ª  22/02/2018 R$ R$ 59,99, MASTER (ON-LINE)',
+                    '4ª  22/03/2018 R$ R$ 59,99, MASTER (ON-LINE)',
+                    '5ª  23/04/2018 R$ R$ 59,99, MASTER (ON-LINE)',
+                    '6ª  22/05/2018 R$ R$ 59,99, MASTER (ON-LINE)',
+                ],
+            }
+        ]             
+      },
+      {
+        tit: 'Leão de aço',
+        status: 'Adimplente',
+        datas: '11/01/2018 à 10/01/2019',
+        produtos: [
+            {
+                header: '1',
+                produto: 'Produto',
+                valor: 'Valor',
+                parcelas: 'Parcelas',
+                pagamentos: [
+                    'Pagamento',
+                ],
+            },
+            {
+                header: '',
+                produto: 'Boné Sócio Torcedor (Promoção PAIS 2017)',
+                valor: 'R$ 0,00',
+                parcelas: '1',
+                pagamentos: [
+                    '1ª  22/12/2017 R$ R$ 0,00',
+                ],
+            },
+            {
+                header: '',
+                produto: 'Leão Aço',
+                valor: 'R$ 719,88',
+                parcelas: '12',
+                pagamentos: [                    
+                    '1ª  22/12/2017 R$ R$ 59,99, MASTER (ON-LINE)',
+                    '2ª  22/01/2018 R$ R$ 59,99, MASTER (ON-LINE)',
+                    '3ª  22/02/2018 R$ R$ 59,99, MASTER (ON-LINE)',
+                    '4ª  22/03/2018 R$ R$ 59,99, MASTER (ON-LINE)',
+                    '5ª  23/04/2018 R$ R$ 59,99, MASTER (ON-LINE)',
+                    '6ª  22/05/2018 R$ R$ 59,99, MASTER (ON-LINE)',                    
+                ],
+                pagamentoCheck: [
+                    '7ª  22/03/2018 R$ R$ 59,99, MASTER (ON-LINE)',
+                    '8ª  23/04/2018 R$ R$ 59,99, MASTER (ON-LINE)',
+                    '9ª  22/05/2018 R$ R$ 59,99, MASTER (ON-LINE)',
+                ]
+            }
+        ]             
+      }
+    ];
+
+  +accProduto(produtosContent)

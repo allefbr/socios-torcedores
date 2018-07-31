@@ -8,7 +8,7 @@ mixin accProduto( params )
 mixin rowGrid( params )
     each content in params
         div(class=content.header ? 'row rowGrid rowGrid--header d-none d-sm-flex d-md-flex': 'row rowGrid')
-            .col-sm-5
+            .col-sm-5.pl-0
                 span.d-sm-none Produto
                 p= content.produto
             .col-sm-2
@@ -20,7 +20,14 @@ mixin rowGrid( params )
             .col-sm-3
                 span.d-sm-none Pagamentos
                 each pag in content.pagamentos
-                    p= pag                
+                    p= pag
+                if content.pagamentoCheck 
+                    each pagCheck in content.pagamentoCheck                        
+                        p.d-flex.align-items-center
+                            +checkbox( pagCheck )
+                            
+                            a(href="#") 
+                                img(src=require('./img/icon-pdf.png'), alt="")
                 if block
                     block
 

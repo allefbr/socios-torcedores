@@ -1,0 +1,17 @@
+.custom-select {
+    position: relative;    
+
+    & ~ & {
+        margin-left: rem(10);
+    }
+}
+.custom-select select {
+    font-size: rem(16);
+    font-family: $font-hsl;
+    padding: rem(5);
+    border: 1px solid cl(main, primary);
+    color: cl(main, secondary);    
+}
+.select-selected {
+    background-color: DodgerBlue;
+}

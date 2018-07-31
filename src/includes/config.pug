@@ -37,6 +37,24 @@ mixin accordions(tit, status, datas)
       if block
         block        
 
+mixin checkbox(tit, subtit)
+    label.box-input
+        span
+            = tit
+            if subtit
+                small= subtit
+        input(type='checkbox')
+        span.checkmark
+
+mixin select( itens )
+    .custom-select
+        select
+            each item in itens
+                option(value= item )= item
+
+            
+
+
 // logado
 - 
   const sprite = JSON.stringify( self.htmlWebpackPlugin.files.sprites )

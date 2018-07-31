@@ -1,0 +1,91 @@
+.block-pagamento {
+    border-top: 45px solid red;
+    background-color: #dedede;
+    padding: rem(20) rem(35);
+}
+
+.box-pagamento {
+    padding: rem(15);
+    background-color: #fff;
+
+    & ~ & {
+        margin-top: rem(15);
+    }
+}
+
+.tit-pagamento {
+    font-size: rem(18);
+    color: cl(main, primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.subtit-pagamento {
+    font-size: rem(15);
+    font-family: $font-hsl;
+    color: cl(main, secondary);
+
+    margin-bottom: rem(10);
+    display: block;
+}
+
+.row-pag {
+    margin-bottom: rem(10);
+
+    .tit-pagamento {        
+        margin-bottom: rem(10);
+    }
+
+    @include m('destq'){
+        margin-bottom: rem(30);
+
+        .tit-pagamento {
+            display: block;
+        }
+    }
+}
+
+.pag-text {
+    font-size: rem(16);
+    text-transform: uppercase;
+    color: cl(main, secondary);
+
+    span {
+        font-weight: 400;
+        margin-left: rem(10);
+        margin-right: rem(10);
+    }
+
+
+    @include m('column'){
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+
+        margin-right: rem(20);
+
+        strong {
+            margin-bottom: rem(5);
+        }
+
+        small {
+            font-size: rem(17); 
+            font-weight: 300;           
+            font-family: $font-hsr;
+        }
+
+        select {
+            padding: 0;
+            padding-right: rem(10);
+        }
+    }
+}
+
+.ls-input {
+    border: 1px solid cl(main, primary);
+    padding: rem(5);
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: cl(main, secondary);
+}
